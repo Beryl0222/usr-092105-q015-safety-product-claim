@@ -1,0 +1,9 @@
+{
+  "event_id": "evt-092105-015-0001",
+  "event_type": "EVIDENCE_REGISTERED",
+  "aggregate_type": "claim_evidence",
+  "aggregate_id": "safety-product-claim-001",
+  "occurred_at": "2026-09-20T12:00:00+08:00",
+  "version": 1,
+  "summary": "登记安全用品宣传举证的首条领域记录"
+}
