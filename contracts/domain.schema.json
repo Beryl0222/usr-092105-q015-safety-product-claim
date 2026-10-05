@@ -21,11 +21,17 @@
     "event_type": {
       "type": "string",
       "enum": [
+        "CLAIM_DEFINED",
         "EVIDENCE_REGISTERED",
-        "CLAIM_PUBLISHED",
+        "EVIDENCE_REVOKED",
+        "ASSET_REGISTERED",
+        "DISTRIBUTION_LAUNCHED",
         "DERIVATIVE_DETECTED",
+        "REVIEW_RECORDED",
         "DELIVERY_SUSPENDED",
-        "APPEAL_DECIDED"
+        "APPEAL_FILED",
+        "APPEAL_DECIDED",
+        "CORRECTION_PUBLISHED"
       ],
       "description": "本领域事件类型"
     },

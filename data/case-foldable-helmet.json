@@ -1,0 +1,361 @@
+[
+  {
+    "event_id": "evt-20260110-0001",
+    "event_type": "EVIDENCE_REGISTERED",
+    "aggregate_type": "claim_evidence",
+    "aggregate_id": "ev-rpt-hm01",
+    "occurred_at": "2026-01-10T10:00:00+08:00",
+    "version": 1,
+    "summary": "登记 HM-01 折叠头盔检测报告，仅覆盖自行车骑行场景",
+    "payload": {
+      "report_no": "RPT-2026-0117",
+      "model_id": "HM-01",
+      "standard": "GB 24429-2009 运动头盔 自行车、滑板、轮滑运动头盔",
+      "scenarios": ["自行车骑行"],
+      "valid_from": "2026-01-01T00:00:00+08:00",
+      "valid_to": "2026-12-31T23:59:59+08:00"
+    }
+  },
+  {
+    "event_id": "evt-20260112-0001",
+    "event_type": "EVIDENCE_REGISTERED",
+    "aggregate_type": "claim_evidence",
+    "aggregate_id": "ev-rpt-hm02",
+    "occurred_at": "2026-01-12T10:00:00+08:00",
+    "version": 1,
+    "summary": "登记 HM-02 检测报告，覆盖自行车骑行与折叠便携，2026-09-30 到期",
+    "payload": {
+      "report_no": "RPT-2026-0120",
+      "model_id": "HM-02",
+      "standard": "GB 24429-2009",
+      "scenarios": ["自行车骑行", "折叠便携"],
+      "valid_from": "2026-01-01T00:00:00+08:00",
+      "valid_to": "2026-09-30T23:59:59+08:00"
+    }
+  },
+  {
+    "event_id": "evt-20260920-0001",
+    "event_type": "CLAIM_DEFINED",
+    "aggregate_type": "claim_evidence",
+    "aggregate_id": "claim-c1",
+    "occurred_at": "2026-09-20T12:00:00+08:00",
+    "version": 1,
+    "summary": "登记直播脚本口播：自行车、电动车、摩托车都能用",
+    "payload": {
+      "text": "自行车、电动车、摩托车都能用",
+      "model_ids": ["HM-01"],
+      "required_scenarios": ["自行车骑行", "电动车驾乘", "摩托车驾乘"],
+      "allowed_phrasing": ["适用于自行车骑行场景"],
+      "banned_comparisons": ["全车型通用", "比摩托车头盔更安全"],
+      "source": { "kind": "script", "script_id": "script-01" }
+    }
+  },
+  {
+    "event_id": "evt-20260920-0002",
+    "event_type": "CLAIM_DEFINED",
+    "aggregate_type": "claim_evidence",
+    "aggregate_id": "claim-c2",
+    "occurred_at": "2026-09-20T12:05:00+08:00",
+    "version": 1,
+    "summary": "登记达人即兴口播：纸质结构同样高强度",
+    "payload": {
+      "text": "纸质结构同样高强度",
+      "model_ids": ["HM-01"],
+      "required_scenarios": ["纸质结构强度"],
+      "allowed_phrasing": [],
+      "banned_comparisons": ["和金属头盔一样结实"],
+      "source": { "kind": "influencer_adlib", "influencer_id": "inf-01" }
+    }
+  },
+  {
+    "event_id": "evt-20260920-0003",
+    "event_type": "CLAIM_DEFINED",
+    "aggregate_type": "claim_evidence",
+    "aggregate_id": "claim-c3",
+    "occurred_at": "2026-09-20T12:10:00+08:00",
+    "version": 1,
+    "summary": "登记 HM-02 宣传语：折叠后厚度减少一半",
+    "payload": {
+      "text": "折叠后厚度减少一半",
+      "model_ids": ["HM-02"],
+      "required_scenarios": ["折叠便携"],
+      "allowed_phrasing": ["折叠后厚度减少一半"],
+      "banned_comparisons": [],
+      "source": { "kind": "script", "script_id": "script-02" }
+    }
+  },
+  {
+    "event_id": "evt-20260801-0001",
+    "event_type": "ASSET_REGISTERED",
+    "aggregate_type": "creative_asset",
+    "aggregate_id": "asset-hm02-demo",
+    "occurred_at": "2026-08-01T10:00:00+08:00",
+    "version": 1,
+    "summary": "登记 HM-02 折叠演示短视频素材",
+    "payload": {
+      "kind": "short_video",
+      "model_ids": ["HM-02"],
+      "claim_ids": ["claim-c3"],
+      "claim_texts": { "seg1": "折叠后厚度减少一半" },
+      "script_id": "script-02"
+    }
+  },
+  {
+    "event_id": "evt-20260801-0002",
+    "event_type": "DISTRIBUTION_LAUNCHED",
+    "aggregate_type": "distribution_instance",
+    "aggregate_id": "dist-hm02-a",
+    "occurred_at": "2026-08-01T12:00:00+08:00",
+    "version": 1,
+    "summary": "HM-02 演示视频在证据有效期内开始投放",
+    "payload": { "asset_id": "asset-hm02-demo", "account_id": "acc-brand", "platform": "shorts", "started_at": "2026-08-01T12:00:00+08:00" }
+  },
+  {
+    "event_id": "evt-20260928-0001",
+    "event_type": "ASSET_REGISTERED",
+    "aggregate_type": "creative_asset",
+    "aggregate_id": "asset-live-0928",
+    "occurred_at": "2026-09-28T19:55:00+08:00",
+    "version": 1,
+    "summary": "登记 9 月 28 日品牌直播场次，达人授权仅限脚本内表述",
+    "payload": {
+      "kind": "livestream",
+      "model_ids": ["HM-01"],
+      "claim_ids": ["claim-c1", "claim-c2"],
+      "claim_texts": { "seg1": "自行车、电动车、摩托车都能用", "seg2": "纸质结构同样高强度" },
+      "script_id": "script-01",
+      "live_id": "live-0928",
+      "influencer_id": "inf-01",
+      "authorization": { "id": "auth-01", "scope": "仅限脚本内表述", "covers_claim_ids": ["claim-c1"] }
+    }
+  },
+  {
+    "event_id": "evt-20260928-0002",
+    "event_type": "DISTRIBUTION_LAUNCHED",
+    "aggregate_type": "distribution_instance",
+    "aggregate_id": "dist-live-0928",
+    "occurred_at": "2026-09-28T20:00:00+08:00",
+    "version": 1,
+    "summary": "品牌账户开始直播投放",
+    "payload": { "asset_id": "asset-live-0928", "account_id": "acc-brand", "platform": "live", "started_at": "2026-09-28T20:00:00+08:00" }
+  },
+  {
+    "event_id": "evt-20260929-0001",
+    "event_type": "REVIEW_RECORDED",
+    "aggregate_type": "review_decision",
+    "aggregate_id": "rd-001",
+    "occurred_at": "2026-09-29T02:00:00+08:00",
+    "version": 1,
+    "summary": "审核决定：claim-c1 对 HM-01 证据不足，暂停相关投放",
+    "payload": {
+      "claim_id": "claim-c1",
+      "model_id": "HM-01",
+      "action": "suspend",
+      "effective_from": "2026-09-29T02:00:00+08:00",
+      "reason": "检测证据仅覆盖自行车骑行场景，电动车、摩托车场景无证据"
+    }
+  },
+  {
+    "event_id": "evt-20260929-0002",
+    "event_type": "REVIEW_RECORDED",
+    "aggregate_type": "review_decision",
+    "aggregate_id": "rd-002",
+    "occurred_at": "2026-09-29T02:05:00+08:00",
+    "version": 1,
+    "summary": "审核决定：claim-c2 无任何证据且超出达人授权，暂停相关投放",
+    "payload": {
+      "claim_id": "claim-c2",
+      "model_id": "HM-01",
+      "action": "suspend",
+      "effective_from": "2026-09-29T02:05:00+08:00",
+      "reason": "无任何检测证据，且该表述不在达人授权范围内"
+    }
+  },
+  {
+    "event_id": "evt-20260929-0101",
+    "event_type": "ASSET_REGISTERED",
+    "aggregate_type": "creative_asset",
+    "aggregate_id": "asset-clip-001",
+    "occurred_at": "2026-09-29T06:00:00+08:00",
+    "version": 1,
+    "summary": "直播下架后剪出的短视频 001（同一段口播）",
+    "payload": {
+      "kind": "short_video",
+      "model_ids": ["HM-01"],
+      "claim_ids": ["claim-c1"],
+      "claim_texts": { "seg1": "自行车、电动车、摩托车都能用" },
+      "clip_source": "asset-live-0928"
+    }
+  },
+  {
+    "event_id": "evt-20260929-0102",
+    "event_type": "ASSET_REGISTERED",
+    "aggregate_type": "creative_asset",
+    "aggregate_id": "asset-clip-002",
+    "occurred_at": "2026-09-29T06:01:00+08:00",
+    "version": 1,
+    "summary": "直播下架后剪出的短视频 002（同一段口播）",
+    "payload": {
+      "kind": "short_video",
+      "model_ids": ["HM-01"],
+      "claim_ids": ["claim-c1"],
+      "claim_texts": { "seg1": "自行车、电动车、摩托车都能用" },
+      "clip_source": "asset-live-0928"
+    }
+  },
+  {
+    "event_id": "evt-20260929-0103",
+    "event_type": "ASSET_REGISTERED",
+    "aggregate_type": "creative_asset",
+    "aggregate_id": "asset-clip-003",
+    "occurred_at": "2026-09-29T06:02:00+08:00",
+    "version": 1,
+    "summary": "直播下架后剪出的短视频 003（同一段口播）",
+    "payload": {
+      "kind": "short_video",
+      "model_ids": ["HM-01"],
+      "claim_ids": ["claim-c1"],
+      "claim_texts": { "seg1": "自行车、电动车、摩托车都能用" },
+      "clip_source": "asset-live-0928"
+    }
+  },
+  {
+    "event_id": "evt-20260929-0104",
+    "event_type": "ASSET_REGISTERED",
+    "aggregate_type": "creative_asset",
+    "aggregate_id": "asset-clip-004",
+    "occurred_at": "2026-09-29T06:03:00+08:00",
+    "version": 1,
+    "summary": "未标注声明的改写短视频，需派生识别",
+    "payload": {
+      "kind": "short_video",
+      "model_ids": ["HM-01"],
+      "claim_ids": [],
+      "claim_texts": { "seg1": "电动车、摩托车也能放心用" },
+      "clip_source": "asset-live-0928"
+    }
+  },
+  {
+    "event_id": "evt-20260929-0105",
+    "event_type": "ASSET_REGISTERED",
+    "aggregate_type": "creative_asset",
+    "aggregate_id": "asset-clip-101",
+    "occurred_at": "2026-09-29T06:04:00+08:00",
+    "version": 1,
+    "summary": "达人自剪的纸质结构片段，不含 claim-c1",
+    "payload": {
+      "kind": "short_video",
+      "model_ids": ["HM-01"],
+      "claim_ids": ["claim-c2"],
+      "claim_texts": { "seg1": "纸质结构同样高强度" },
+      "clip_source": "asset-live-0928",
+      "influencer_id": "inf-01"
+    }
+  },
+  {
+    "event_id": "evt-20260929-0201",
+    "event_type": "DISTRIBUTION_LAUNCHED",
+    "aggregate_type": "distribution_instance",
+    "aggregate_id": "dist-clip-001",
+    "occurred_at": "2026-09-29T06:10:00+08:00",
+    "version": 1,
+    "summary": "短视频 001 经品牌账户继续投放",
+    "payload": { "asset_id": "asset-clip-001", "account_id": "acc-brand", "platform": "shorts", "started_at": "2026-09-29T06:10:00+08:00" }
+  },
+  {
+    "event_id": "evt-20260929-0202",
+    "event_type": "DISTRIBUTION_LAUNCHED",
+    "aggregate_type": "distribution_instance",
+    "aggregate_id": "dist-clip-002",
+    "occurred_at": "2026-09-29T06:11:00+08:00",
+    "version": 1,
+    "summary": "短视频 002 经 MCN 账户继续投放",
+    "payload": { "asset_id": "asset-clip-002", "account_id": "acc-mcn", "platform": "shorts", "started_at": "2026-09-29T06:11:00+08:00" }
+  },
+  {
+    "event_id": "evt-20260929-0203",
+    "event_type": "DISTRIBUTION_LAUNCHED",
+    "aggregate_type": "distribution_instance",
+    "aggregate_id": "dist-clip-003",
+    "occurred_at": "2026-09-29T06:12:00+08:00",
+    "version": 1,
+    "summary": "短视频 003 经 MCN 账户继续投放",
+    "payload": { "asset_id": "asset-clip-003", "account_id": "acc-mcn", "platform": "shorts", "started_at": "2026-09-29T06:12:00+08:00" }
+  },
+  {
+    "event_id": "evt-20260929-0204",
+    "event_type": "DISTRIBUTION_LAUNCHED",
+    "aggregate_type": "distribution_instance",
+    "aggregate_id": "dist-clip-004",
+    "occurred_at": "2026-09-29T06:13:00+08:00",
+    "version": 1,
+    "summary": "改写短视频 004 经达人账户继续投放",
+    "payload": { "asset_id": "asset-clip-004", "account_id": "acc-influencer", "platform": "shorts", "started_at": "2026-09-29T06:13:00+08:00" }
+  },
+  {
+    "event_id": "evt-20260929-0205",
+    "event_type": "DISTRIBUTION_LAUNCHED",
+    "aggregate_type": "distribution_instance",
+    "aggregate_id": "dist-clip-101",
+    "occurred_at": "2026-09-29T06:14:00+08:00",
+    "version": 1,
+    "summary": "达人自剪纸质结构片段经达人账户投放",
+    "payload": { "asset_id": "asset-clip-101", "account_id": "acc-influencer", "platform": "shorts", "started_at": "2026-09-29T06:14:00+08:00" }
+  },
+  {
+    "event_id": "evt-20261002-0001",
+    "event_type": "DISTRIBUTION_LAUNCHED",
+    "aggregate_type": "distribution_instance",
+    "aggregate_id": "dist-hm02-b",
+    "occurred_at": "2026-10-02T09:00:00+08:00",
+    "version": 1,
+    "summary": "HM-02 演示视频在证据过期后再次起投",
+    "payload": { "asset_id": "asset-hm02-demo", "account_id": "acc-brand", "platform": "shorts", "started_at": "2026-10-02T09:00:00+08:00" }
+  },
+  {
+    "event_id": "evt-20261003-0001",
+    "event_type": "EVIDENCE_REGISTERED",
+    "aggregate_type": "claim_evidence",
+    "aggregate_id": "ev-rpt-hm01b",
+    "occurred_at": "2026-10-03T10:00:00+08:00",
+    "version": 1,
+    "summary": "品牌补充登记 HM-01 新报告，增覆盖电动车驾乘，仍不含摩托车",
+    "payload": {
+      "report_no": "RPT-2026-0455",
+      "model_id": "HM-01",
+      "standard": "GB 24429-2009",
+      "scenarios": ["自行车骑行", "电动车驾乘"],
+      "valid_from": "2026-10-01T00:00:00+08:00",
+      "valid_to": "2027-09-30T23:59:59+08:00"
+    }
+  },
+  {
+    "event_id": "evt-20261003-0002",
+    "event_type": "APPEAL_FILED",
+    "aggregate_type": "review_decision",
+    "aggregate_id": "appeal-001",
+    "occurred_at": "2026-10-03T11:00:00+08:00",
+    "version": 1,
+    "summary": "品牌就 rd-001 提交申诉并附新报告",
+    "payload": {
+      "decision_id": "rd-001",
+      "appellant": "brand",
+      "evidence_ids": ["ev-rpt-hm01b"],
+      "statement": "新报告已覆盖电动车驾乘场景，请求恢复相应投放"
+    }
+  },
+  {
+    "event_id": "evt-20261004-0001",
+    "event_type": "APPEAL_DECIDED",
+    "aggregate_type": "review_decision",
+    "aggregate_id": "appeal-001",
+    "occurred_at": "2026-10-04T15:00:00+08:00",
+    "version": 1,
+    "summary": "申诉部分成立：电动车场景已有证据，摩托车场景维持暂停",
+    "payload": {
+      "outcome": "partially_upheld",
+      "resolved_scenarios": ["电动车驾乘"],
+      "remaining_scenarios": ["摩托车驾乘"]
+    }
+  }
+]
