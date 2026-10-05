@@ -22,9 +22,14 @@
       "type": "string",
       "enum": [
         "EVIDENCE_REGISTERED",
+        "EVIDENCE_REVOKED",
         "CLAIM_PUBLISHED",
         "DERIVATIVE_DETECTED",
+        "DISTRIBUTION_STARTED",
+        "REVIEW_DECIDED",
         "DELIVERY_SUSPENDED",
+        "DELIVERY_REINSTATED",
+        "APPEAL_FILED",
         "APPEAL_DECIDED"
       ],
       "description": "本领域事件类型"
